@@ -1,0 +1,8 @@
+ #! /bin/csh -f
+ 
+
+iverilog  -Wtimescale  -o tb.vvp -g2012 -I ../../design ../tb.v \
+    ../../design/barrel_shifter.v  \
+
+
+

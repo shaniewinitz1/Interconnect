@@ -1,0 +1,102 @@
+$date
+	Thu Jul 13 10:48:37 2023
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb $end
+$var wire 24 ! src_connectivity [23:0] $end
+$var wire 64 " output_pes_data [63:0] $end
+$var wire 24 # dest_connectivity [23:0] $end
+$var reg 32 $ ID [31:0] $end
+$var reg 32 % Index [31:0] $end
+$var reg 1 & clk $end
+$var reg 32 ' groups_sizes [31:0] $end
+$var reg 64 ( input_pes_data [63:0] $end
+$var reg 32 ) marker [31:0] $end
+$var reg 32 * marker0 [31:0] $end
+$var reg 32 + marker1 [31:0] $end
+$var reg 32 , marker2 [31:0] $end
+$var reg 32 - marker3 [31:0] $end
+$var reg 1 . rst $end
+$var reg 1024 / testname [1023:0] $end
+$var integer 32 0 corrects [31:0] $end
+$var integer 32 1 cycles [31:0] $end
+$var integer 32 2 errors [31:0] $end
+$var integer 32 3 panics [31:0] $end
+$var integer 32 4 wrongs [31:0] $end
+$scope module dut $end
+$var wire 1 & clk $end
+$var wire 32 5 groups_sizes [31:0] $end
+$var wire 64 6 input_pes_data [63:0] $end
+$var wire 1 . rst $end
+$var reg 3 7 counter [2:0] $end
+$var reg 24 8 dest_connectivity [23:0] $end
+$var reg 3 9 in_out_counter [2:0] $end
+$var reg 3 : in_out_reverse_counter [2:0] $end
+$var reg 1 ; in_out_swap $end
+$var reg 64 < output_pes_data [63:0] $end
+$var reg 3 = reverse_counter [2:0] $end
+$var reg 24 > src_connectivity [23:0] $end
+$var reg 1 ? swap $end
+$var reg 1 @ swap_forward $end
+$var reg 4 A swap_size [3:0] $end
+$var integer 32 B level_idx [31:0] $end
+$var integer 32 C pe_idx [31:0] $end
+$var integer 32 D slice_idx [31:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b1000 D
+b1000 C
+b11 B
+b100 A
+0@
+x?
+bx >
+bx =
+bx <
+x;
+bx :
+bx 9
+bx 8
+bx 7
+b0 6
+b0 5
+b0 4
+b0 3
+b0 2
+b0 1
+b0 0
+b1110110011001010111001001101001011011000110111101100111001011100111000001111001 /
+1.
+b0 -
+b0 ,
+b0 +
+b0 *
+b0 )
+b0 (
+b0 '
+0&
+b0 %
+b0 $
+bx #
+bx "
+bx !
+$end
+#10000
+0@
+b1000 D
+b100 A
+b111 =
+b11 B
+b111 7
+b0 "
+b0 <
+b1000 C
+1&

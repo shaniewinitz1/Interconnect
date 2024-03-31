@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.1 (64-bit)
+# SW Build 3865809 on Sun May  7 15:04:56 MDT 2023
+# IP Build 3864474 on Sun May  7 20:36:21 MDT 2023
+# SharedData Build 3865790 on Sun May 07 13:33:03 MDT 2023
+# Start of session at: Sat Mar 30 20:18:03 2024
+# Process ID: 3813323
+# Current directory: /storage/users/shanie/xconnect/ZooKing/xconnect_synth_impl_32pes_4
+# Command line: vivado -mode batch -source ./impl.tcl
+# Log file: /storage/users/shanie/xconnect/ZooKing/xconnect_synth_impl_32pes_4/vivado.log
+# Journal file: /storage/users/shanie/xconnect/ZooKing/xconnect_synth_impl_32pes_4/vivado.jou
+# Running On: miner-ws, OS: Linux, CPU Frequency: 3200.000 MHz, CPU Physical cores: 16, Host memory: 134826 MB
+#-----------------------------------------------------------
+source ./impl.tcl

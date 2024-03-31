@@ -1,0 +1,37 @@
+module: tb tb
+reg:   ID [32] = 00000000000000000000000000000000 // ID
+reg:   Index [32] = 00000000000000000000000000000000 // Index
+reg:   clk [1] = 1 // clk
+reg:   marker [32] = 00000000000000000000000000000000 // marker
+reg:   marker0 [32] = 00000000000000000000000000000000 // marker0
+reg:   marker1 [32] = 00000000000000000000000000000000 // marker1
+reg:   marker2 [32] = 00000000000000000000000000000000 // marker2
+reg:   marker3 [32] = 00000000000000000000000000000000 // marker3
+reg:   rst [1] = 0 // rst
+reg:   testname [1024] = 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 // testname
+son:   tb.dut
+module: xconnect_top tb.dut
+net:   tb.dut.clk [1] = 1     // clk
+net:   tb.dut.rst [1] = 0     // rst
+net:   tb.dut.xconnect2pe_src_connectivity_bus [64] = 0xx00xx10xx00xx10xx00xx10xx00xx11xx01xx11xx01xx11xx01xx11xx01xx1     // xconnect2pe_src_connectivity_bus
+net:   tb.dut.xconnect2pe_dest_connectivity_bus [64] = xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1     // xconnect2pe_dest_connectivity_bus
+net:   tb.dut.xconnect2pe_data_bus [128] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     // xconnect2pe_data_bus
+reg:   pe2xconnect_data_bus [128] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx // pe2xconnect_data_bus
+reg:   pe2xconnect_groups_sizes_bus [80] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx // pe2xconnect_groups_sizes_bus
+son:   tb.dut.xconnect_i
+module: xconnect tb.dut.xconnect_i
+net:   tb.dut.xconnect_i.clk [1] = 1     // clk
+net:   tb.dut.xconnect_i.groups_sizes [80] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     // groups_sizes
+net:   tb.dut.xconnect_i.input_pes_data [128] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx     // input_pes_data
+net:   tb.dut.xconnect_i.rst [1] = 0     // rst
+reg:   counter [4] = 1000 // counter
+reg:   dest_connectivity [64] = xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1xxx0xxx1 // dest_connectivity
+reg:   in_out_counter [4] = 0111 // in_out_counter
+reg:   in_out_reverse_counter [4] = 1110 // in_out_reverse_counter
+reg:   in_out_swap [1] = x // in_out_swap
+reg:   output_pes_data [128] = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx // output_pes_data
+reg:   reverse_counter [4] = 0001 // reverse_counter
+reg:   src_connectivity [64] = 0xx00xx10xx00xx10xx00xx10xx00xx11xx01xx11xx01xx11xx01xx11xx01xx1 // src_connectivity
+reg:   swap [1] = 0 // swap
+reg:   swap_forward [1] = 0 // swap_forward
+reg:   swap_size [5] = 01000 // swap_size

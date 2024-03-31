@@ -1,0 +1,9 @@
+ #! /bin/csh -f
+ 
+# $VLSISTUFF/pybin3/mvlg.py
+ln -s ../verilog.py verilog.py
+# if (-e tb.vvp) then
+#   /bin/rm -R tb.vvp
+# endif
+iverilog  -Wtimescale  -o tb.vvp -g2012 -I ../../design/ ../tb.v \
+    ../../design/xconnect_top.v  

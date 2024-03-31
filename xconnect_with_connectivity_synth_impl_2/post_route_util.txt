@@ -1,0 +1,29 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.1 (lin64) Build 3865809 Sun May  7 15:04:56 MDT 2023
+| Date         : Thu Mar 28 18:54:33 2024
+| Host         : miner-ws running 64-bit Ubuntu 20.04.6 LTS
+| Command      : report_utilization -hierarchical -file post_route_util.txt
+| Design       : xconnect
+| Device       : xcu250-figd2104-2-e
+| Speed File   : -2
+| Design State : Physopt postRoute
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------+--------+------------+------------+---------+------+------+--------+--------+------+------------+
+| Instance | Module | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | URAM | DSP Blocks |
++----------+--------+------------+------------+---------+------+------+--------+--------+------+------------+
+| xconnect |  (top) |      10162 |      10162 |       0 |    0 | 4232 |      0 |      0 |    0 |          0 |
++----------+--------+------------+------------+---------+------+------+--------+--------+------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

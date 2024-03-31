@@ -1,0 +1,2 @@
+make synth PERSONA=msm_bls377_250mhz_2port_hbm_no_ila
+make impl PERSONA=msm_bls377_250mhz_2port_hbm_no_ila
