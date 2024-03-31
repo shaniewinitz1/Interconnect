@@ -28,11 +28,9 @@ always begin
 end
 initial begin
     $dumpvars(0,tb);
-    // rst_n = 0;
     clk = 0;
     rst = 1;
     #100;
-    // rst_n=1;
     rst = 0;
 
 end

@@ -127,22 +127,7 @@ class driverMonitor(logs.driverClass):
                 expected_in_mem.append(self.init_out_mem_data[pe_idx_out_mem][pe_idx_in_mem])
             self.expected_in_mem_data.append(expected_in_mem)
 
-#        Monitors.append(self)
-#        self.Path = Path
-#        self.state='idle'
-#        self.waiting  = 0
-#
-#    def force(self,Sig,Val):
-#        veri.force('%s.%s'%(self.Path,Sig),str(Val))
-#
-#    def peek(self,Sig):
-#        return logs.peek('%s.%s'%(self.Path,Sig))
-#    def peeksigned(self,Sig):
-#        return logs.peeksigned('%s.%s'%(self.Path,Sig))
-#
-#    def valid(self,Sig):
-#        return self.peek(Sig)==1
-#
+
     def run(self):
         global run_cycles
         run_cycles += 1
@@ -154,7 +139,7 @@ class driverMonitor(logs.driverClass):
                 step_size = NOF_PES/self.pe_group_sizes[pe_idx]
                 for i in range(self.pe_group_sizes[pe_idx]):
                     mem_idx = int((pe_idx+(i*step_size))%NOF_PES)
-                    # veri.force_mem(out_mem_data_path, str(mem_idx), str(self.init_out_mem_data[pe_idx][mem_idx])) #FIXME
+                    # veri.force_mem(out_mem_data_path, str(mem_idx), str(self.init_out_mem_data[pe_idx][mem_idx])) #mem can also be initialized from pe_memory.v
         elif (run_cycles == NOF_PES*2):
             for pe_idx in range(NOF_PES):
                 in_mem_data = []
@@ -167,10 +152,10 @@ class driverMonitor(logs.driverClass):
                     expected_in_mem_data.append(self.expected_in_mem_data[pe_idx][mem_idx])
                 in_mem_data.sort()
                 expected_in_mem_data.sort()
-                # print(f"pe: {pe_idx}\nin_data:  {in_mem_data}\nexpected: {expected_in_mem_data}",) #FIXME
+                # print(f"pe: {pe_idx}\nin_data:  {in_mem_data}\nexpected: {expected_in_mem_data}",)
                 for mem_idx in range(self.pe_group_sizes[pe_idx]):
-                    # if in_mem_data[mem_idx] != expected_in_mem_data[mem_idx]: #FIXME
-                    #     print("ERROR!! in_mem_data[mem_idx]:", in_mem_data[mem_idx])
+                    if in_mem_data[mem_idx] != expected_in_mem_data[mem_idx]: 
+                        print("ERROR!! in_mem_data[mem_idx]:", in_mem_data[mem_idx])
                     print(f"pe:{pe_idx}, in_mem_data[{mem_idx}]:{in_mem_data[mem_idx]}")
                     if in_mem_data[mem_idx] != pe_idx+10:
                         print("ERROR!! in_mem_data[mem_idx]:", in_mem_data[mem_idx])
@@ -194,6 +179,3 @@ def negedge():
         veri.listing('tb','100','deep.list')
     if (cycles>30):
         for Mon in Monitors: Mon.run()
-
-def cucu():  # list of all interface signals, just to help You find the names
-    veri.force('tb.rst','0')

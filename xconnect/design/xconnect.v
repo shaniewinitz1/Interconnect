@@ -20,16 +20,12 @@ module xconnect #(
     );    
     reg [WORD_SIZE-1:0]         levels_input_data   [NOF_LEVELS:0][NOF_PES - 1:0];
     reg [GROUP_SIZE_WIDTH-1:0]  group_size          [0:NOF_PES-1];
-    // reg [NOF_LEVELS-1:0]        counter;
     reg [NOF_LEVELS-1:0]        in_out_counter;
-    // reg [NOF_LEVELS-1:0]        reverse_counter;
     reg [NOF_LEVELS-1:0]        in_out_reverse_counter;
     reg [NOF_LEVELS-1:0]        levels_mask         [0:NOF_PES-1];
 
     //generate counter
     always @(posedge clk) begin
-        // in_out_counter <= counter;
-        // counter <= rst ?  NOF_PES - 1 : counter + 1;
         in_out_counter <= rst ?  NOF_PES - 1 : in_out_counter + 1;
     end
 
@@ -43,7 +39,6 @@ module xconnect #(
             levels_mask[pe_idx] = ~((NOF_PES/group_size[pe_idx])-1);
         end
         for (level_idx = 0; level_idx < NOF_LEVELS; level_idx = level_idx+1) begin
-            // reverse_counter[level_idx] = counter[NOF_LEVELS-1-level_idx];
             in_out_reverse_counter[level_idx] = in_out_counter[NOF_LEVELS-1-level_idx];
 
         end
@@ -51,7 +46,6 @@ module xconnect #(
 
     //swaps
     integer slice_idx;
-    // reg [NOF_PES-1:0] swap;
     reg [NOF_PES-1:0] in_out_swap;
     reg [NOF_LEVELS:0] swap_size;
     reg [NOF_PES-1:0] swap_forward;
@@ -59,7 +53,6 @@ module xconnect #(
         for (level_idx=0; level_idx<NOF_LEVELS; level_idx = level_idx+1) begin
             swap_size = (1 << level_idx);
             for (slice_idx = 0; slice_idx < NOF_PES; slice_idx = slice_idx + 1) begin 
-                // swap[slice_idx] = ((reverse_counter &(levels_mask[slice_idx])) >> level_idx) & 1'h1;
                 in_out_swap[slice_idx] = ((in_out_reverse_counter &(levels_mask[slice_idx])) >> level_idx) & 1'h1;
                 swap_forward[slice_idx] = ((slice_idx % (1 << (level_idx + 1))) < swap_size);
                 levels_input_data[level_idx+1][slice_idx] = in_out_swap[slice_idx] ? (swap_forward[slice_idx] ? levels_input_data[level_idx][slice_idx + swap_size]:levels_input_data[level_idx][slice_idx - swap_size] )

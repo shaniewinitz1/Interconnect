@@ -9,9 +9,9 @@
 module pe_memory #(
     parameter WORD_SIZE = 256,
     parameter NOF_PES = 16,
-    parameter NOF_LEVELS = $clog2(NOF_PES), // localparam NOF_LEVELS = $clog2(NOF_PES);
-    // parameter GROUP_SIZE_WIDTH = NOF_LEVELS + 1
-    parameter GROUP_SIZE_WIDTH = 5
+    parameter NOF_LEVELS = $clog2(NOF_PES),
+    parameter GROUP_SIZE_WIDTH = NOF_LEVELS + 1
+    // parameter GROUP_SIZE_WIDTH = 5
     ) (
     input                               clk,
     input                               rst,

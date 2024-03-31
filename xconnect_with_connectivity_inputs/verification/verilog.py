@@ -195,7 +195,7 @@ class driverMonitor(logs.driverClass):
             self.counter = 0
 
         #generate new input
-        self.input = random.sample(range(0, 2**WORD_SIZE), NOF_PES) #create random list if inputs ##FIXME - does it need to be 2**WORD_SIZE-1?
+        self.input = random.sample(range(0, 2**WORD_SIZE), NOF_PES) #create random list if inputs
         # self.input = list(range(NOF_PES)) #for sanity check
         print("counter:", self.counter)
         print("input:                 ", self.input)
@@ -204,7 +204,6 @@ class driverMonitor(logs.driverClass):
         veri.force('tb.groups_sizes',str(self.groups_sizes_by_pe_int))
         return   
     
-# example of driver class usage
 driverMonitor('tb',Monitors)
 
 def negedge():
